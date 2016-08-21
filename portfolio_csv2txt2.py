@@ -1,7 +1,7 @@
 #!/usr/bin/python
-# This is part of code for https://wilsonmar.github.io/website-build-project-plan/
-# Usage: portfolio_csv2txt.py -i Portfolio.csv -o Portfolio.yml
-# This prints out a yaml format data file (without the ---) to be included in front-matter of a .md file.
+# This prints out a file (without the ---) to be included in front-matter yml of a .md file.
+# as the "Parser" described in https://wilsonmar.github.io/website-build-project-plan/
+# Usage: portfolio_csv2txt.py  Portfolio.csv  Portfolio.yml
 # The input file to process defaults to "Porfolio.csv" if not specified in the argument calling this program.
 # The output is to STDOUT if an -o (output file) is not specified.
 # The output rewrites any existing file of the same name.
