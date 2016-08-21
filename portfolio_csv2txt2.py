@@ -1,10 +1,11 @@
 #!/usr/bin/python
+# This is part of code for https://wilsonmar.github.io/website-build-project-plan/
 # Usage: portfolio_csv2txt.py -i Portfolio.csv -o Portfolio.yml
 # This prints out a yaml format data file (without the ---) to be included in front-matter of a .md file.
 # The input file to process defaults to "Porfolio.csv" if not specified in the argument calling this program.
 # The output is to STDOUT if an -o (output file) is not specified.
 # The output rewrites any existing file of the same name.
-
+# This is store in https://github.com/wilsonmar/pythonic-goodness
 
 # Get argument list using sys module:
 import sys, getopt
@@ -30,6 +31,7 @@ if __name__ == "__main__":
       file_out = sys.argv[2]
    except IndexError: # getopt.GetoptError:
       file_out = file_in + '.txt'
+
 # Send STDOUT to a file:
 sys.stdout=open( file_out,"w")
 
