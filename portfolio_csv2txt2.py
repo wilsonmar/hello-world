@@ -8,7 +8,7 @@
 # This is store in https://github.com/wilsonmar/pythonic-goodness
 
 # Get argument list using sys module:
-import sys, getopt
+import sys, os.path
 def program(*args):
     # do whatever
     pass
@@ -22,6 +22,17 @@ if __name__ == "__main__":
       # print "Usage: " + sys.argv[0] + ' -i <inputfile> -o <outputfile>'
       # sys.exit(2)
       file_in = 'Portfolio.csv'
+
+# Exit if file_in not found:
+if os.path.exists(file_in) and os.access(file_in, os.R_OK):
+    import csv, time
+    with open(file_in, 'rU') as f:
+        reader = csv.reader(f, delimiter=',')
+        for i in reader:
+            print '# '+sys.argv[0]+' '+time.strftime('%Y-%m-%d-%H:%M (local time)')+' outrowcount='+ str( sum(1 for _ in f) )
+else:
+    print "ABORTED: "+sys.argv[0] + ". Either file "+file_in+" is missing or is not readable."
+    exit(2)
 
 # Provide default file_out name argument if not provided:
 if __name__ == "__main__":
@@ -58,8 +69,6 @@ with open(file_in, 'rU') as f:
          '\n    status: '+i[6] + \
          '\n    notes: '+i[16] + \
          '\n    tags: '+i[17] 
-    for i in reader:
-        print '# allrowcount='+ str( sum(1 for _ in f) )
 
 # Close the file every time:
 sys.stdout.close()
