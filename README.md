@@ -20,4 +20,5 @@ portfolio_csv2txt2.py:
 1. Reset STDOUT back to original screen
 6. Calculate elapsed time
 0. Convert microseconds to seconds
-0. format floating point number
+0. Format floating point number
+0. Calculate ratio
