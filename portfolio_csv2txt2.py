@@ -1,11 +1,15 @@
 #!/usr/bin/python
 # This prints out a file (without the ---) to be included in front-matter yml of a .md file.
 # as the "Parser" described in https://wilsonmar.github.io/website-build-project-plan/
-# Usage: portfolio_csv2txt.py  Portfolio.csv  Portfolio.yml
+# Usage: python portfolio_csv2txt.py  Portfolio.csv  Portfolio.yml
 # The input file to process defaults to "Porfolio.csv" if not specified in the argument calling this program.
 # The output is to STDOUT if an -o (output file) is not specified.
 # The output rewrites any existing file of the same name.
 # This is store in https://github.com/wilsonmar/pythonic-goodness
+
+# Begin timer:
+import timeit
+start_time = timeit.default_timer()
 
 # Get argument list using sys module:
 import sys, os.path
@@ -29,9 +33,9 @@ if os.path.exists(file_in) and os.access(file_in, os.R_OK):
     with open(file_in, 'rU') as f:
         reader = csv.reader(f, delimiter=',')
         for i in reader:
-            print '# '+sys.argv[0]+' '+time.strftime('%Y-%m-%d-%H:%M (local time)')+' outrowcount='+ str( sum(1 for _ in f) )
+            print '# '+time.strftime('%Y-%m-%d-%H:%M (local time)')+" "+sys.argv[0]+' START: outrowcount='+ str( sum(1 for _ in f) ) +'.'
 else:
-    print "ABORTED: "+sys.argv[0] + ". Either file "+file_in+" is missing or is not readable."
+    print '# '+time.strftime('%Y-%m-%d-%H:%M (local time)')+' '+sys.argv[0]+" ABORTED. Either file "+file_in+" is missing or is not readable."
     exit(2)
 
 # Provide default file_out name argument if not provided:
@@ -44,6 +48,7 @@ if __name__ == "__main__":
       file_out = file_in + '.txt'
 
 # Send STDOUT to a file:
+stdout = sys.stdout  # remember the handle to the real standard output.
 sys.stdout=open( file_out,"w")
 
 
@@ -72,3 +77,10 @@ with open(file_in, 'rU') as f:
 
 # Close the file every time:
 sys.stdout.close()
+
+
+sys.stdout = stdout # Restore regular stdout.
+# End timer:
+elapsed = timeit.default_timer() - start_time
+print "# "+ time.strftime('%Y-%m-%d-%H:%M (local time)') +' '+ sys.argv[0] +" END: ran for "+ "{:.2f}".format(elapsed * 1000 )+ ' secs.'
+# https://mkaz.tech/python-string-format.html
