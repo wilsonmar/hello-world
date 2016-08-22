@@ -13,6 +13,7 @@ portfolio_csv2txt2.py:
 1. Print current time
 2. Concatenate text and numbers
 3. Create (open) a file for writing to
+0. Redirect STDOUT to a file
 4. loop through an input CSV file
 5. Reference specific columns
 0. Line continuation character
