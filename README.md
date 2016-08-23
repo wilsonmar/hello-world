@@ -1,5 +1,8 @@
 This repo contains Python utilities I developed to generate markdown files based on a _Porfolio.csv file.
 
+It's part of a whole structure:
+https://wilsonmar.github.io/jam-stack-website-project-plan/
+
 Below are the Python language features used in the program source.
 
 _portfolio_csv2md.py generates entire .md markdown files within a _products folder for use by Snipcart.
