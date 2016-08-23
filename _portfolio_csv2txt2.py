@@ -1,11 +1,11 @@
 #!/usr/bin/python
 # This prints out a file (without the ---) to be included in front-matter yml of a .md file.
-# as the "Parser" described in https://wilsonmar.github.io/website-build-project-plan/
+# as the "Parser" described in https://wilsonmar.github.io/jam-website-project-plan/
 # Usage: python portfolio_csv2txt.py  Portfolio.csv  Portfolio.yml
-# The input file to process defaults to "Porfolio.csv" if not specified in the argument calling this program.
+# The input file to process defaults to "_Porfolio.csv" if not specified in the argument calling this program.
 # The output is to STDOUT if an -o (output file) is not specified.
 # The output rewrites any existing file of the same name.
-# This is store in https://github.com/wilsonmar/pythonic-goodness
+# This is store in https://github.com/wilsonmar/python-batch
 
 # Begin timer:
 import timeit
@@ -25,7 +25,7 @@ if __name__ == "__main__":
    except IndexError: # getopt.GetoptError:
       # print "Usage: " + sys.argv[0] + ' -i <inputfile> -o <outputfile>'
       # sys.exit(2)
-      file_in = 'Portfolio.csv'
+      file_in = '_Portfolio.csv'
 
 # Exit if file_in not found:
 if os.path.exists(file_in) and os.access(file_in, os.R_OK):
@@ -83,4 +83,4 @@ sys.stdout = stdout # Restore regular stdout.
 # End timer:
 elapsed = timeit.default_timer() - start_time
 print "# "+ time.strftime('%Y-%m-%d-%H:%M (local time)') +' '+ sys.argv[0] +" END: ran for "+ "{:.2f}".format(elapsed * 1000 )+ ' secs.'
-# https://mkaz.tech/python-string-format.html
+
