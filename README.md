@@ -28,5 +28,5 @@ Underlines in file names are used to differentiate between the generator inputs 
 1. Reset STDOUT back to original screen
 6. Calculate elapsed time
 0. Convert microseconds to seconds
-0. Format floating point number
+0. Format floating point number (https://mkaz.tech/python-string-format.html)
 0. Calculate ratio of items per second.
