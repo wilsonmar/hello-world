@@ -12,6 +12,7 @@ _jekyll-txt2csv.py lists the subject names within Jekyll-formatted post files.
 3. Get list of files in folder into an array
 4. Extract out leading text containing a date
 5. Print CSV file alphabetized by name fragment
+6. Print HTML file of items by different categories
 
 _portfolio_csv2md.py generates entire .md markdown files within a _products folder for use by Snipcart.
 
