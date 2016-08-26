@@ -5,6 +5,14 @@ https://wilsonmar.github.io/jam-stack-website-project-plan/
 
 Below are the Python language features used in the program source.
 
+_jekyll-txt2csv.py lists the subject names within Jekyll-formatted post files.
+
+0. Get operating system
+1. Get default path
+2. Get list of files in folder
+3. Extract out leading text containing a date
+4. Print alphabetized list according by name fragment
+
 _portfolio_csv2md.py generates entire .md markdown files within a _products folder for use by Snipcart.
 
 _portfolio_csv2txt2.py:
