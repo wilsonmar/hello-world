@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # From https://github.com/wilsonmar/python-batch/_jekyll-txt2csv.py
+# Described in https://github.com/wilsonmar/python-batch/blob/master/README.md
 # Based on http://www.dreamsyssoft.com/python-scripting-tutorial/classes-tutorial.php
 
 import sys, os, glob
