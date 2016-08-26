@@ -7,11 +7,11 @@ Below are the Python language features used in the program source.
 
 _jekyll-txt2csv.py lists the subject names within Jekyll-formatted post files.
 
-0. Get operating system
-1. Get default path
-2. Get list of files in folder
-3. Extract out leading text containing a date
-4. Print alphabetized list according by name fragment
+1. Get operating system
+2. Get default path based on the operating system
+3. Get list of files in folder into an array
+4. Extract out leading text containing a date
+5. Print CSV file alphabetized by name fragment
 
 _portfolio_csv2md.py generates entire .md markdown files within a _products folder for use by Snipcart.
 
